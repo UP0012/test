@@ -71,7 +71,7 @@ userSchema.methods.generateAccessToken = function () {
     });
 };
 userSchema.methods.generateRefreshToken = function () {
-    return jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN_SECRE, {
+    return jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN_SECRET  , {
         expiresIn: "10d",
     });
 };
